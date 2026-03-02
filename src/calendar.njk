@@ -1,0 +1,112 @@
+---
+layout: layouts/base.njk
+title: Calendar
+description: "View upcoming events and activities at Summitville Wesleyan Bible Church."
+---
+
+<!-- ── PAGE HERO ───────────────────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="container">
+    <h1>Church Calendar</h1>
+    <p>Stay connected with everything happening at SWBC.</p>
+  </div>
+</section>
+
+<!-- ── CALENDAR EMBED ────────────────────────────────────────────────────── -->
+<section>
+  <div class="container">
+
+    <!--
+      ══════════════════════════════════════════════════════════════
+      HOW TO EMBED YOUR GOOGLE CALENDAR:
+
+      1. Open Google Calendar (calendar.google.com)
+      2. Click the ⚙️ settings gear → "Settings"
+      3. Under "Settings for my calendars", click your church calendar
+      4. Scroll to "Integrate calendar"
+      5. Copy the "Embed code" (an <iframe> tag)
+      6. Replace the entire <div class="calendar-placeholder"> block
+         below with that <iframe> wrapped in <div class="calendar-embed">
+
+      Example of what to paste:
+        <div class="calendar-embed">
+          <iframe src="https://calendar.google.com/calendar/embed?src=YOUR_ID%40group.calendar.google.com&ctz=America%2FIndiana%2FIndianapolis"
+            style="border:0" width="800" height="650" frameborder="0" scrolling="no"></iframe>
+        </div>
+
+      TIP: Set the height on the iframe to "650" for a comfortable view,
+      and add &mode=MONTH to the URL to default to month view.
+      ══════════════════════════════════════════════════════════════
+    -->
+
+    <div class="calendar-placeholder">
+      <span class="cal-icon">📅</span>
+      <h3>Calendar Coming Soon</h3>
+      <p>
+        A Google Calendar embed will appear here. To set it up, open
+        <code>src/calendar.njk</code> and follow the instructions in the
+        comment above.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── UPCOMING EVENTS ────────────────────────────────────────────────────── -->
+<section class="bg-light">
+  <div class="container">
+    <div class="section-header">
+      <h2>Don't Miss</h2>
+      <p>Highlight upcoming events here, or remove this section once the calendar is live.</p>
+    </div>
+    <div class="grid-3">
+      <!--
+        Add upcoming event cards here. Example:
+        <div class="ministry-card">
+          <span class="ministry-icon">🎄</span>
+          <h3>Christmas Eve Service</h3>
+          <p>December 24 at 6:00 PM — A candlelight service for the whole family.</p>
+        </div>
+      -->
+      <div class="ministry-card">
+        <span class="ministry-icon">📋</span>
+        <h3>[Event Name]</h3>
+        <p>[Date &amp; Time] — [Short description of the event. Replace this with your actual upcoming events.]</p>
+      </div>
+      <div class="ministry-card">
+        <span class="ministry-icon">📋</span>
+        <h3>[Event Name]</h3>
+        <p>[Date &amp; Time] — [Short description of the event. Replace this with your actual upcoming events.]</p>
+      </div>
+      <div class="ministry-card">
+        <span class="ministry-icon">📋</span>
+        <h3>[Event Name]</h3>
+        <p>[Date &amp; Time] — [Short description of the event. Replace this with your actual upcoming events.]</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SOCIAL REMINDER ────────────────────────────────────────────────────── -->
+<section>
+  <div class="container text-center">
+    <h2>Stay in the Loop</h2>
+    <p style="color:var(--text-muted); max-width:520px; margin-inline:auto; margin-top:.5rem;">
+      Follow us on Facebook for announcements, event updates, and photos
+      from our community.
+    </p>
+    <div style="margin-top:1.75rem;">
+      <a
+        href="{{ site.facebook }}"
+        class="social-btn facebook"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+        </svg>
+        Follow us on Facebook
+      </a>
+    </div>
+  </div>
+</section>

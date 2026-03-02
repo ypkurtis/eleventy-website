@@ -1,0 +1,91 @@
+---
+layout: layouts/base.njk
+title: Messages
+description: "Watch messages from Summitville Wesleyan Bible Church, organized by series."
+permalink: /messages/
+---
+
+<!-- ── PAGE HERO ───────────────────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="container">
+    <h1>Messages</h1>
+    <p>Messages from Sunday worship, organized by series.</p>
+  </div>
+</section>
+
+<!-- ── MESSAGE ARCHIVE ───────────────────────────────────────────────────── -->
+<section>
+  <div class="container">
+
+    {% if collections.sermons.length %}
+
+      {% set seriesList = collections.sermons | groupByKey("series") %}
+
+      {% for seriesGroup in seriesList %}
+      <div class="series-section">
+        <h2 class="series-title">{{ seriesGroup.name }}</h2>
+        <div class="grid-3">
+          {% for sermon in seriesGroup.items %}
+          <div class="sermon-card">
+            {% if sermon.data.youtubeId %}
+            <div class="sermon-video-wrap">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/{{ sermon.data.youtubeId }}"
+                title="{{ sermon.data.title }}"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            {% endif %}
+            <div class="sermon-info">
+              <span class="series-tag">{{ sermon.data.series }}</span>
+              <h3>{{ sermon.data.title }}</h3>
+              <div class="sermon-meta">
+                <span>{{ sermon.data.speaker }}</span>
+                <span>{{ sermon.date | dateFormat }}</span>
+                {% if sermon.data.scripture %}
+                <span>{{ sermon.data.scripture }}</span>
+                {% endif %}
+              </div>
+              {% if sermon.data.description %}
+              <p class="sermon-description">{{ sermon.data.description }}</p>
+              {% endif %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+
+    {% else %}
+
+      <div class="calendar-placeholder">
+        <span class="cal-icon">🎙️</span>
+        <h3>Messages Coming Soon</h3>
+        <p>
+          Add sermon files to <code>src/sermons/</code> to populate this
+          archive. See the included sample sermons for the correct format.
+        </p>
+      </div>
+
+    {% endif %}
+
+  </div>
+</section>
+
+<!-- ── SUBSCRIBE CTA ──────────────────────────────────────────────────────── -->
+<section class="service-band">
+  <div class="container text-center">
+    <h2 style="color:var(--gold); margin-bottom:1rem;">Never Miss a Message</h2>
+    <p style="color:rgba(255,255,255,.75); max-width:500px; margin-inline:auto; margin-bottom:2rem;">
+      Subscribe to our YouTube channel or follow us on Facebook to get
+      notified whenever a new message is posted.
+    </p>
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+      <a href="{{ site.facebook }}" class="btn btn-gold" target="_blank" rel="noopener noreferrer">
+        Follow on Facebook
+      </a>
+    </div>
+  </div>
+</section>

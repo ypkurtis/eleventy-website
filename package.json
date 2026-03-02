@@ -1,0 +1,12 @@
+{
+  "name": "summitville-wesleyan-bible-church",
+  "version": "1.0.0",
+  "description": "Website for Summitville Wesleyan Bible Church",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}

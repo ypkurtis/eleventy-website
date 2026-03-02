@@ -1,0 +1,134 @@
+---
+layout: layouts/base.njk
+title: Plan a Visit
+description: "Everything you need to know before your first visit to Summitville Wesleyan Bible Church."
+---
+
+<!-- ── PAGE HERO ───────────────────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="container">
+    <h1>Plan Your Visit</h1>
+    <p>We can't wait to meet you. Here's everything you need to know.</p>
+  </div>
+</section>
+
+<!-- ── SERVICE TIMES + ADDRESS ──────────────────────────────────────────── -->
+<section>
+  <div class="container">
+    <div class="visit-cols">
+
+      <!-- Left: info blocks -->
+      <div>
+        <div class="info-block">
+          <h3>Service Times</h3>
+          {% for st in site.serviceTimes %}
+          <p>
+            <strong>{{ st.name }}:</strong> {{ st.time }}
+            {% if st.location %}<br><span style="color:var(--text-muted); font-size:.88rem;">{{ st.location }}</span>{% endif %}
+          </p>
+          {% endfor %}
+          <p class="mt-2" style="font-size:.88rem; color:var(--text-muted);">
+            ✏️ <em>Update times in <code>src/_data/site.js</code></em>
+          </p>
+        </div>
+
+        <div class="info-block">
+          <h3>Location</h3>
+          <p>{{ site.address.full }}</p>
+          <a href="{{ site.address.mapsUrl }}" target="_blank" rel="noopener noreferrer" class="btn btn-navy mt-2">
+            Get Directions
+          </a>
+        </div>
+
+        <div class="info-block">
+          <h3>What to Expect</h3>
+          <div class="expect-grid">
+            <div class="expect-item">
+              <span class="expect-icon">🅿️</span>
+              <p><strong>Parking</strong> — Free parking is available on site. Accessible spaces are located near the main entrance.</p>
+            </div>
+            <div class="expect-item">
+              <span class="expect-icon">👕</span>
+              <p><strong>Attire</strong> — Come as you are! You'll see people in everything from jeans to dress clothes. There's no dress code here.</p>
+            </div>
+            <div class="expect-item">
+              <span class="expect-icon">👶</span>
+              <p><strong>Children</strong> — We have age-appropriate programming for children during the service. Kids check-in begins 15 minutes before the service.</p>
+            </div>
+            <div class="expect-item">
+              <span class="expect-icon">⏱️</span>
+              <p><strong>Service Length</strong> — Our Sunday morning service runs approximately 60–75 minutes.</p>
+            </div>
+            <div class="expect-item">
+              <span class="expect-icon">🎶</span>
+              <p><strong>Worship Style</strong> — We blend contemporary worship music with classic hymns in a warm, participatory atmosphere.</p>
+            </div>
+            <div class="expect-item">
+              <span class="expect-icon">☕</span>
+              <p><strong>After the Service</strong> — Stick around! We have a time of fellowship after each service. Coffee and conversation welcome.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: map + first-timer tips -->
+      <div>
+        <div class="map-frame mb-4">
+          <!--
+            To add a Google Map embed:
+            1. Go to maps.google.com and search for your church address.
+            2. Click Share → Embed a map → Copy the <iframe> code.
+            3. Replace the placeholder below with that iframe code.
+          -->
+          <div class="map-placeholder">
+            <span class="map-pin">📍</span>
+            <p>{{ site.address.full }}</p>
+            <p style="margin-top:.5rem;">
+              <a href="{{ site.address.mapsUrl }}" target="_blank" rel="noopener noreferrer" class="btn btn-navy mt-2">
+                Open in Google Maps
+              </a>
+            </p>
+            <p style="font-size:.8rem; margin-top:1rem; color:var(--text-muted);">
+              ✏️ Replace this placeholder with a Google Maps embed in <code>src/visit.njk</code>
+            </p>
+          </div>
+        </div>
+
+        <div class="info-block">
+          <h3>New Here? Here's a Tip</h3>
+          <p>
+            When you walk in the door, look for someone wearing a <strong>Welcome
+            Team</strong> badge — they are here to answer any questions and help
+            you find your way around. Don't hesitate to say hello!
+          </p>
+          <p>
+            After the service, we'd love to get you a <strong>Welcome Gift</strong>
+            — stop by the Welcome Table in the foyer to pick yours up and learn
+            more about getting connected.
+          </p>
+          <a href="/connect/" class="btn btn-outline-navy mt-2">Contact Us with Questions</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICE TIMES BAND ─────────────────────────────────────────────────── -->
+<section class="service-band">
+  <div class="container">
+    <div class="section-header">
+      <h2>When We Meet</h2>
+      <p>All are welcome. No reservation needed.</p>
+    </div>
+    <div class="times-grid">
+      {% for st in site.serviceTimes %}
+      <div class="time-card">
+        <h3>{{ st.name }}</h3>
+        <div class="time-value">{{ st.time }}</div>
+        <div class="time-sub">{{ st.location }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

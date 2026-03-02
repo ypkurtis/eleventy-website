@@ -1,0 +1,163 @@
+---
+layout: layouts/base.njk
+title: Prayer Request
+description: "Submit a prayer request to the Summitville Wesleyan Bible Church prayer team."
+---
+
+<!-- ── PRAYER HERO ────────────────────────────────────────────────────────── -->
+<section class="prayer-hero">
+  <div class="container">
+    <h1>Prayer Requests</h1>
+    <p>
+      We believe in the power of prayer. Share your request with us and let
+      our team pray alongside you.
+    </p>
+  </div>
+</section>
+
+<!-- ── FORM ───────────────────────────────────────────────────────────────── -->
+<section class="bg-light">
+  <div class="container">
+
+    <div class="form-wrapper">
+      <div class="form-intro">
+        <h2>Submit a Request</h2>
+        <p>
+          Your prayer request will be shared with our pastoral team and dedicated
+          prayer volunteers. You may choose to keep your request private (pastoral
+          team only) or allow it to be shared with the broader prayer group.
+        </p>
+      </div>
+
+      <!--
+        FORM SETUP:
+        This form is ready for Netlify Forms (add data-netlify="true" if
+        deploying to Netlify). For other hosts, use a service like Formspree:
+          1. Go to formspree.io and create a free form
+          2. Replace action="#" below with your Formspree endpoint, e.g.:
+             action="https://formspree.io/f/YOUR_FORM_ID"
+          3. Add method="POST"
+        Or keep action="#" and handle submissions with your own backend.
+      -->
+      <form
+        name="prayer-request"
+        action="#"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+      >
+        <!-- Honeypot for spam prevention -->
+        <p style="display:none;">
+          <label>Don't fill this out: <input name="bot-field" /></label>
+        </p>
+        <input type="hidden" name="form-name" value="prayer-request" />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="prayer-first-name">First Name <span aria-hidden="true">*</span></label>
+            <input
+              type="text"
+              id="prayer-first-name"
+              name="first-name"
+              required
+              autocomplete="given-name"
+              placeholder="Your first name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="prayer-last-name">Last Name</label>
+            <input
+              type="text"
+              id="prayer-last-name"
+              name="last-name"
+              autocomplete="family-name"
+              placeholder="Your last name (optional)"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="prayer-email">Email Address</label>
+          <input
+            type="email"
+            id="prayer-email"
+            name="email"
+            autocomplete="email"
+            placeholder="your@email.com (optional — so we can follow up)"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="prayer-request-type">Type of Request</label>
+          <select id="prayer-request-type" name="request-type">
+            <option value="">— Select —</option>
+            <option value="health">Health &amp; Healing</option>
+            <option value="family">Family &amp; Relationships</option>
+            <option value="work">Work &amp; Finances</option>
+            <option value="spiritual">Spiritual Growth</option>
+            <option value="grief">Grief &amp; Loss</option>
+            <option value="praise">Praise &amp; Thanksgiving</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="prayer-message">Your Prayer Request <span aria-hidden="true">*</span></label>
+          <textarea
+            id="prayer-message"
+            name="prayer-request"
+            required
+            placeholder="Share as much or as little as you'd like. We read every request with care."
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <div class="form-check">
+            <input type="checkbox" id="prayer-private" name="private" value="yes" />
+            <label for="prayer-private">
+              Keep this request private — share only with the pastoral team
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-check">
+            <input type="checkbox" id="prayer-follow-up" name="follow-up" value="yes" />
+            <label for="prayer-follow-up">
+              I would welcome a follow-up from our pastoral team
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-navy" style="width:100%; justify-content:center; font-size:1.05rem; padding:.9rem;">
+          Submit Prayer Request
+        </button>
+
+        <p class="form-note">
+          Your request is handled with care and confidentiality. We take privacy
+          seriously and will never share your information outside the church without
+          your permission.
+        </p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── ASSURANCE ──────────────────────────────────────────────────────────── -->
+<section>
+  <div class="container text-center" style="max-width:660px;">
+    <h2>You Are Not Alone</h2>
+    <p style="color:var(--text-muted); margin-top:.75rem;">
+      Whether you are walking through a difficult season or celebrating an
+      answer to prayer, we want to hear from you. Our prayer team gathers
+      weekly to lift up every request we receive.
+    </p>
+    <div class="scripture-banner mt-4" style="text-align:left;">
+      <blockquote>
+        "Cast all your anxiety on him because he cares for you."
+      </blockquote>
+      <cite>1 Peter 5:7 (NIV)</cite>
+    </div>
+  </div>
+</section>
